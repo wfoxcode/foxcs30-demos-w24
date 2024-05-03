@@ -17,7 +17,7 @@ public class App {
         // double dbl2 = keys.nextDouble();
 
         for (int i = 0; i < 10; i++) {
-            System.out.println("The number is: " + rdInt(100) );
+            System.out.println("The number is: " + rdInt(2,17) );
         }
     }
 
@@ -29,9 +29,13 @@ public class App {
         return gen;
     }
 
-    public static int rdInt(int max) {
+    public static int rdInt(int min, int max) {
+        max++; //add one to max to include it in the result
+
         //generate random double between 0 and max
-        double gen = Math.random() * max;
+        double gen = Math.random() * (max - min) + min;
+
+        // Math.random() * 80 + 20   ---->number between 20 and 100
 
         //Cast the double as an int to drop the decimals
         return (int) gen;
