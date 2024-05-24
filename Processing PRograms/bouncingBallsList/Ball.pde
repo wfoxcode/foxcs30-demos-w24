@@ -4,7 +4,7 @@ class Ball {
     int dx, dy; //Velocity or Speed Values
 
     // Constructor Method
-    Ball(int ballx, int bally, int ballr, int w; int h;) {
+    Ball(int ballx, int bally, int ballr, int w, int h,) {
         x = ballx; //set the x cord
         y = bally; //set the y cord
         r = ballr; //set the radius
