@@ -12,8 +12,17 @@ void draw() {
     background(70,30,50);
     
     for (Ball theBall : ballGroup) {
-        theBall.display();
         theBall.move();
+
+        //Check collision
+        for (Ball otherBall : ballGroup) {
+            if (theBall != otherBall) {
+                theBall.checkCollision(otherBall);
+            }
+        }
+        
+        theBall.display();
+
     }
     
 }

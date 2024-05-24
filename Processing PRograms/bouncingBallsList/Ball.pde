@@ -51,10 +51,17 @@ class Ball {
 
         //Bounce the ball
         if (distanceApart < d) {
-            dy = dy * -1;
-            dx = dx * -1;
-            otherBall.dy = otherBall.dy * -1;
-            otherBall.dx = otherBall.dx * -1;
+            //Store first velocity
+            int tempdx = dx;
+            int tempdy = dy;
+
+            // ball 1 gets velocity 2
+            dx = otherBall.dx;
+            dy = otherBall.dy;
+
+            //Ball 2 gets velocity 1
+            otherBall.dx = tempdx;
+            otherBall.dy = tempdy;
         }
 
     }
