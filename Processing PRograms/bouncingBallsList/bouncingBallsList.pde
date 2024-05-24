@@ -10,13 +10,11 @@ void setup() {
 
 void draw() {
     background(70,30,50);
-    for (int i = 0; i < ballGroup.size(); i++) {
-        ballGroup.get(i).display();
-        ballGroup.get(i).move();
-        // Original Array Code
-        // ballGroup[i].display();
-        // ballGroup[i].move();
-        }
+    
+    for (Ball theBall : ballGroup) {
+        theBall.display();
+        theBall.move();
+    }
     
 }
 

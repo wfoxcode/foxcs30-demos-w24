@@ -45,4 +45,18 @@ class Ball {
         }
 
     }
+
+    void checkCollision(Ball otherBall) {
+        double distanceApart = dist(x, y, otherBall.x, otherBall.y);
+
+        //Bounce the ball
+        if (distanceApart < d) {
+            dy = dy * -1;
+            dx = dx * -1;
+            otherBall.dy = otherBall.dy * -1;
+            otherBall.dx = otherBall.dx * -1;
+        }
+
+    }
+
 }
