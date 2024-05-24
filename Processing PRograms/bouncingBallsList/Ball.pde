@@ -2,9 +2,10 @@ class Ball {
     int x, y, r; //Declare position and radius variables
     int cr, cg, cb; //RGB values
     int dx, dy; //Velocity or Speed Values
+    int width, height; //variables for the screen dimensions
 
     // Constructor Method
-    Ball(int ballx, int bally, int ballr, int w, int h,) {
+    Ball(int ballx, int bally, int ballr, int windoww, int windowh) {
         x = ballx; //set the x cord
         y = bally; //set the y cord
         r = ballr; //set the radius
@@ -17,6 +18,10 @@ class Ball {
         //Set Velocity
         dx = int( random(-10,10));
         dy = int( random(-10,10));
+
+        // Passing over the width and height data of the screen
+        width = windoww; 
+        height = windowh;
     }
 
     void display() {

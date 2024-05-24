@@ -22,7 +22,7 @@ void draw() {
 
 void mousePressed() {
     // Creates a new object at the end of the ArrayList
-    ballGroup.add(new Ball(mouseX, mouseY, 100));
+    ballGroup.add(new Ball(mouseX, mouseY, 100, width, height));
 
     // //Creates a new object at this array position
     // if (pos < ballGroup.length) {
