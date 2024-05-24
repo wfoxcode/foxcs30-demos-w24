@@ -4,7 +4,7 @@ class Ball {
     int dx, dy; //Velocity or Speed Values
 
     // Constructor Method
-    Ball(int ballx, int bally, int ballr, int w; int h;) {
+    Ball(int ballx, int bally, int ballr) {
         x = ballx; //set the x cord
         y = bally; //set the y cord
         r = ballr; //set the radius
@@ -28,16 +28,5 @@ class Ball {
         //apply the rate of change (velocity)
         x = x + dx;
         y = y + dy;
-
-        if (x <= 0) {
-            // Reverses direction
-            dx = dx * -1;
-        }
-
-        if (y <= 0) {
-            //Reverse direction
-            dy = dy * -1;
-        }
-
     }
 }
