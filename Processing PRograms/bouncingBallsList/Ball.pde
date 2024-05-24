@@ -1,14 +1,14 @@
 class Ball {
-    int x, y, r; //Declare position and radius variables
+    int x, y, d; //Declare position and radius variables
     int cr, cg, cb; //RGB values
     int dx, dy; //Velocity or Speed Values
     int width, height; //variables for the screen dimensions
 
     // Constructor Method
-    Ball(int ballx, int bally, int ballr, int windoww, int windowh) {
+    Ball(int ballx, int bally, int balld, int windoww, int windowh) {
         x = ballx; //set the x cord
         y = bally; //set the y cord
-        r = ballr; //set the radius
+        d = balld; //set the radius
 
         //Randomize colour values
         cr = int( random(0,255) );
@@ -26,7 +26,7 @@ class Ball {
 
     void display() {
         fill(cr, cg, cb);
-        circle(x,y,r);
+        circle(x,y,d);
     }
 
     void move() {
@@ -34,12 +34,12 @@ class Ball {
         x = x + dx;
         y = y + dy;
 
-        if (x <= 0) {
+        if (x <= 0 + d/2 || x >= width - d/2) {
             // Reverses direction
             dx = dx * -1;
         }
 
-        if (y <= 0) {
+        if (y <= 0 + d/2 || y >= height - d/2) {
             //Reverse direction
             dy = dy * -1;
         }
