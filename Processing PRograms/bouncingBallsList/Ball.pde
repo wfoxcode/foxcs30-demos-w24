@@ -3,6 +3,7 @@ class Ball {
     int cr, cg, cb; //RGB values
     int dx, dy; //Velocity or Speed Values
     int width, height; //variables for the screen dimensions
+    int grav;
 
     // Constructor Method
     Ball(int ballx, int bally, int balld, int windoww, int windowh) {
@@ -18,6 +19,7 @@ class Ball {
         //Set Velocity
         dx = int( random(-10,10));
         dy = int( random(-10,10));
+        grav = -1;
 
         // Passing over the width and height data of the screen
         width = windoww; 
@@ -33,6 +35,7 @@ class Ball {
         //apply the rate of change (velocity)
         x = x + dx;
         y = y + dy;
+        dy = dy - grav; //apply gravity to y
 
         if (x <= 0 + d/2 || x >= width - d/2) {
             // Reverses direction
