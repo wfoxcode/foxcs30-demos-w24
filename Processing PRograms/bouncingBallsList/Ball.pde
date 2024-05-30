@@ -4,9 +4,10 @@ class Ball {
     int dx, dy; //Velocity or Speed Values
     int width, height; //variables for the screen dimensions
     int grav;
+    boolean infected;
 
     // Constructor Method
-    Ball(int ballx, int bally, int balld, int windoww, int windowh) {
+    Ball(int ballx, int bally, int balld, int windoww, int windowh, boolean ballInf) {
         x = ballx; //set the x cord
         y = bally; //set the y cord
         d = balld; //set the radius
@@ -24,9 +25,18 @@ class Ball {
         // Passing over the width and height data of the screen
         width = windoww; 
         height = windowh;
+
+        infected = ballInf;
     }
 
     void display() {
+
+        if (infected == true) {
+            cr = 255;
+            cg = 0;
+            cb = 0;
+        }
+
         fill(cr, cg, cb);
         circle(x,y,d);
     }

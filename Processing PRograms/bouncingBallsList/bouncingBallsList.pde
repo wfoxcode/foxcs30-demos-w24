@@ -29,11 +29,19 @@ void draw() {
 
 void mousePressed() {
     // Creates a new object at the end of the ArrayList
-    ballGroup.add(new Ball(mouseX, mouseY, 100, width, height));
+    ballGroup.add(new Ball(mouseX, mouseY, 100, width, height, false));
 
     // //Creates a new object at this array position
     // if (pos < ballGroup.length) {
     //     ballGroup[pos] = new Ball(mouseX, mouseY, 100);
     //     pos++;
     // }
+}
+
+void keyPressed() {
+    if (key == 'j') {
+        //True because it is infected
+        ballGroup.add(new Ball(width/2, height/2, 50, width, height, true));
+    }
+
 }
