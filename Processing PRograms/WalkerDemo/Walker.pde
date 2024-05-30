@@ -8,7 +8,7 @@ class Walker {
     x = tempx;
     y = tempy;
     size = 25;
-    speed = 5;
+    speed = 20;
   }
   
   void display() {
