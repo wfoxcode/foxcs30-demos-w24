@@ -29,7 +29,7 @@ void keyPressed() {
   else if (keyCode == DOWN || key == 's') {
     joe.move(2);
   }
-  else if (keyCode == LEFT || key = 'a') {
+  else if (keyCode == LEFT || key == 'a') {
     joe.move(3);
   }
 }
