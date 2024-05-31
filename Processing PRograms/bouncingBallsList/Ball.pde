@@ -45,7 +45,10 @@ class Ball {
         //apply the rate of change (velocity)
         x = x + dx;
         y = y + dy;
-        dy = dy - grav; //apply gravity to y
+
+        if (infected == true) {
+            dy = dy - grav; //apply gravity to y
+        }
 
         if (x <= 0 + d/2 || x >= width - d/2) {
             // Reverses direction
@@ -75,7 +78,20 @@ class Ball {
             //Ball 2 gets velocity 1
             otherBall.dx = tempdx;
             otherBall.dy = tempdy;
+
+            
+            //Pass the infection
+            if (otherBall.infected == true && infected == false) {
+                infected = true;
+            }
+            
+            else if (otherBall.infected == false && infected == true) {
+                otherBall.infected = true;
+            }        
+        
         }
+
+
 
     }
 
